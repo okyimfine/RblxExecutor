@@ -1,0 +1,44 @@
+body {
+  background-color: black;
+  color: lime;
+  font-family: monospace;
+  text-align: center;
+  margin-top: 100px;
+}
+.center {
+  animation: flicker 2s infinite;
+}
+button {
+  background: lime;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.loader {
+  width: 80%;
+  height: 10px;
+  background: #222;
+  margin: 20px auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.loader::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: lime;
+  animation: load 3s linear forwards;
+}
+@keyframes load {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
